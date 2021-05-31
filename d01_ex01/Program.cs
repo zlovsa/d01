@@ -25,7 +25,10 @@ void AddTask() {
 		Console.WriteLine("Ошибка ввода. Проверьте входные данные и повторите запрос.");
 		return;
 	}
-	var newTask = new Task(title, summary, dueDate, type, priority);
+	DateTime? nullDate = null;
+	if (dueDateStr.Length > 0 && DateTime.TryParse(dueDateStr, out dueDate))
+		nullDate = dueDate;
+	var newTask = new Task(title, summary, nullDate, type, priority);
 	tasks.Add(newTask);
 	Console.WriteLine($"{newTask}");
 }

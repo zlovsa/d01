@@ -8,7 +8,7 @@ namespace d01_ex01
 {
 	class Task
 	{
-		public Task(string title,string summary,DateTime dueDate,TaskType type,TaskPriority priority) {
+		public Task(string title,string summary,DateTime? dueDate,TaskType type,TaskPriority priority) {
 			this.title = title;
 			this.summary = summary;
 			this.dueDate = dueDate;
