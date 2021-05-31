@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace d01_ex01.Events
+namespace d01_ex01
 {
-	class CreatedEvent
+	record CreatedEvent : Event
 	{
+		TaskState state = TaskState.New;
 	}
 }

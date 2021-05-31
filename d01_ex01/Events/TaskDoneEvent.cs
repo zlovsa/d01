@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace d01_ex01.Events
+namespace d01_ex01
 {
-	class TaskDoneEvent
+	record TaskDoneEvent : Event
 	{
+		TaskState state = TaskState.Done;
 	}
 }

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace d01_ex01.Tasks
+namespace d01_ex01
 {
 	enum TaskType { Work, Study, Personal };
 }
