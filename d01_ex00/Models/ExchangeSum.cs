@@ -19,7 +19,7 @@ namespace d01_ex00
 			string[] split = sumString.Split(new char[] { ' ' });
 			if (split.Length != 2
 				|| !double.TryParse(split[0],
-					System.Globalization.NumberStyles.AllowDecimalPoint,
+					System.Globalization.NumberStyles.Any,
 					new System.Globalization.CultureInfo("en-US"), out Sum)
 				|| Sum < 0
 				|| !ValidCurrencyId(split[1]))

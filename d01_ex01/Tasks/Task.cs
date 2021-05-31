@@ -23,23 +23,29 @@ namespace d01_ex01
 		DateTime? dueDate;
 		TaskType type;
 		TaskPriority? priority = TaskPriority.Normal;
-		TaskState _state = TaskState.New;
-		public TaskState state { get => _state; }
+		public TaskState state { 
+			get {
+				if(history[0] is CreatedEvent)
+					return TaskState.New;
+				else if(history[0] is TaskDoneEvent)
+					return TaskState.Done;
+				else
+					return TaskState.Outdated;
+			}
+		}
 		List<Event> history;
 
 		public bool Done() {
 			if (state != TaskState.New)
 				return false;
-			history.Add(new TaskDoneEvent());
-			_state = TaskState.Done;
+			history.Insert(0, new TaskDoneEvent());
 			return true;
 		}
 
 		public bool Wontdo() {
 			if (state != TaskState.New)
 				return false;
-			history.Add(new TaskDoneEvent());
-			_state = TaskState.Outdated;
+			history.Insert(0, new TaskWontDoEvent());
 			return true;
 		}
 
