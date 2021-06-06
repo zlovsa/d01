@@ -6,8 +6,5 @@ using System.Threading.Tasks;
 
 namespace d01_ex01
 {
-	record TaskDoneEvent : Event
-	{
-		TaskState state = TaskState.Done;
-	}
+	record TaskDoneEvent() : Event(TaskState.Done);
 }

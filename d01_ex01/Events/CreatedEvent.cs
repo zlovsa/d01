@@ -6,8 +6,5 @@ using System.Threading.Tasks;
 
 namespace d01_ex01
 {
-	record CreatedEvent : Event
-	{
-		TaskState state = TaskState.New;
-	}
+	record CreatedEvent() : Event(TaskState.New);
 }

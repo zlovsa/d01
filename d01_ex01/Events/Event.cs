@@ -9,5 +9,9 @@ namespace d01_ex01
 	record Event
 	{
 		public DateTime date = DateTime.Now;
+		public TaskState state;
+		public Event(TaskState state) {
+			this.state = state;
+		}
 	}
 }

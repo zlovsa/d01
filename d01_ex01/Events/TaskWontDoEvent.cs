@@ -6,8 +6,5 @@ using System.Threading.Tasks;
 
 namespace d01_ex01
 {
-	record TaskWontDoEvent : Event
-	{
-		TaskState state = TaskState.Outdated;
-	}
+	record TaskWontDoEvent() : Event(TaskState.Outdated);
 }
